@@ -575,7 +575,7 @@ li {
   text-align: center;
 }
 .section-freelancing .overlay {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -597,4 +597,95 @@ li {
 .section-freelancing p {
   color: var(--white);
   margin-bottom: 1.8rem;
+}
+
+/* contact====================================== */
+.section-contact-main {
+  max-width: 70rem;
+  margin: 0 auto;
+  margin-top: 9rem;
+  transition: all 0.3s linear;
+}
+.section-contact-main form {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+.section-contact-main input,
+.section-contact-main textarea {
+  padding: 1.5rem 2rem;
+  border: 0.1rem solid #c9c9c9;
+  border-radius: 5px;
+  font-size: 1.6rem;
+  font-family: "work sans";
+  width: 100%;
+}
+.section-contact-main input[type="submit"] {
+  max-width: 30%;
+  border: none;
+}
+
+/* footer============================== */
+
+.section-footer {
+  background-color: var(--heading);
+  transition: all 0.7s ease;
+}
+
+.section-footer h3 {
+  color: var(--white);
+  margin-bottom: 4rem;
+}
+.f-about p {
+  color: #adadad;
+}
+.f-links ul,
+.f-services ul,
+.f-links address {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  justify-content: center;
+}
+.f-links li,
+.f-links a,
+.f-services li,
+.f-services a {
+  font-size: 1.8rem;
+  color: #adadad;
+  text-transform: capitalize;
+}
+.f-links span,
+.f-services span,
+.f-address span {
+  margin-right: 1rem;
+}
+.f-address p,
+.f-address p a {
+  font-style: normal;
+  color: #adadad;
+}
+.f-social-icons{
+  margin: 5rem 0;
+  text-align: center;
+  color: #adadad;
+
+}
+.f-social-icons .icons{
+  width: 4rem;
+  height: 4rem;
+  background-color: var(--icons-bg);
+  display: inline-block;
+  padding: 1.4rem 1.8rem;
+  color: var(--white);
+  animation: water-wave 3s ease infinite;
+
+}
+.f-credits p{
+  text-align: center;
+  columns: #adadad;
+}
+footer a:hover,
+footer a:active{
+  color: var(--white);
 }
