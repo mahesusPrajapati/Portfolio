@@ -107,7 +107,7 @@ li {
 
 .container {
   max-width: 140rem;
-  margin: 0 auto;
+  margin: 0 1rem;
 }
 
 .grid {
@@ -117,17 +117,17 @@ li {
 
 .grid-two-column {
   grid-template-columns: repeat(2, 1fr);
-  /* grid-template-columns: 1fr 1fr; */
+  
 }
 
 .grid-three-column {
   grid-template-columns: repeat(3, 1fr);
-  /* grid-template-columns: 1fr 1fr; */
+  
 }
 
 .grid-four-column {
   grid-template-columns: repeat(4, 1fr);
-  /* grid-template-columns: 1fr 1fr; */
+  
 }
 
 .btn {
@@ -351,6 +351,7 @@ li {
 
 .portfolio-images img {
   width: 100%;
+  /* height: 50%; */
   border-radius: 7px;
   position: relative;
   overflow: hidden;
@@ -483,7 +484,107 @@ li {
   margin-bottom: 1rem;
 }
 
+.swiper {
+  width: 100%;
+  height: 100%;
+  margin-top: 9rem;
+}
 
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
 
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  margin-bottom: 8rem;
+}
 
+.swiper-client-msg {
+  padding: 2rem 7rem;
+  background: var(--white);
+  border-radius: 1rem;
+  text-align: left;
+  box-shadow: var(--shadow);
+  position: relative;
+}
+
+.swiper-client-msg::before {
+  content: "";
+  position: absolute;
+  bottom: -10rem;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5rem solid var(--white);
+  border-color: transparent;
+  border-top-color: var(--helper-tint);
+}
+
+.swiper-client-msg p::before {
+  content: "\f10d";
+  position: absolute;
+  top: 0;
+  left: 2rem;
+  font-size: 5rem;
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  color: #ced3ff;
+}
+
+.swiper-client-msg p::after {
+  content: "\f10e";
+  position: absolute;
+  bottom: 0;
+  right: 3rem;
+  font-size: 5rem;
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  color: #ced3ff;
+}
+
+.swiper-client-data {
+  align-items: center;
+  margin-top: 3.2rem;
+  gap: 3.2rem;
+}
+
+.swiper-slide img {
+  max-width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  border: 0.5rem solid var(--helper-tint);
+}
+
+/*==================== freelancing============== */
+
+.section-freelancing{
+  background-image: url(../images/folio/3.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-attachment: fixed;
+  position: relative;
+  transition: all 0.7s linear;
+  text-align: center;
+}
+.section-freelancing .overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--helper);
+  opacity: 0.7;
+}
 
