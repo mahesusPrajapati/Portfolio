@@ -45,29 +45,44 @@ p_btns.addEventListener("click", (e) => {
 
 // number ====================================
 
-const countNum = document.querySelectorAll(".counter-numbers");
+const worksection = document.querySelector(".section-work-data");
+const workObsorver = new IntersectionObserver(
+  (entries, observer) => {
+    const [entry] = entries;
+    console.log("entry");
 
-const speed = 200;
-countNum.forEach((curElem) => {
-  const updateNumber = () => {
-    const targetNumber = parseInt(curElem.dataset.number);
-    // console.log(targetNumber);
-    const initialNum = parseInt(curElem.innerText);
-    // console.log(initialNum);
+    if (!entry.isIntersecting) return;
+    const countNum = document.querySelectorAll(".counter-numbers");
 
-    const incNum = Math.trunc(targetNumber / speed);
-    // console.log(incNum);
-    if (initialNum < targetNumber) {
-      curElem.innerText = `${initialNum + incNum}+`;
-      setTimeout(updateNumber, 10);
-    }
-  };
-  updateNumber();
-});
+    const speed = 200;
+    countNum.forEach((curElem) => {
+      const updateNumber = () => {
+        const targetNumber = parseInt(curElem.dataset.number);
+        // console.log(targetNumber);
+        const initialNum = parseInt(curElem.innerText);
+        // console.log(initialNum);
+
+        const incNum = Math.trunc(targetNumber / speed);
+        // console.log(incNum);
+        if (initialNum < targetNumber) {
+          curElem.innerText = `${initialNum + incNum}+`;
+          setTimeout(updateNumber, 10);
+        }
+      };
+      updateNumber();
+    });
+    observer.unobserve(worksection);
+  },
+  {
+    root: null,
+    threshold: 0,
+  }
+);
+workObsorver.observe(worksection);
 
 // swiper========================
-var swiper = new Swiper(".mySwiper", {
-  slidesPerView: 3,
+new Swiper(".mySwiper", {
+  slidesPerView: 2,
   spaceBetween: 30,
   autoplay: {
     Delay: 3000,
@@ -78,6 +93,40 @@ var swiper = new Swiper(".mySwiper", {
     clickable: true,
   },
 });
+
+const jsMedia = (widthSize) => {
+  if (widthSize.matches) {
+    new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      autoplay: {
+        Delay: 3000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+  } else {
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 2,
+      spaceBetween: 30,
+      autoplay: {
+        Delay: 3000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+  }
+};
+
+const widthSize = window.matchMedia("(max-width:780px)");
+widthSize.addEventListener("change", jsMedia);
+// widthSize(widthSize);  
 
 // scroll=============================================
 
@@ -111,3 +160,11 @@ scrollfun = () => {
     scrollElement.style.display = "none";
   }
 };
+
+// responsive navbar=================================
+const m_nav = document.querySelector(".mobile-nav-icon");
+const headerElem = document.querySelector(".header");
+
+m_nav.addEventListener("click", () => {
+  headerElem.classList.toggle("active");
+});

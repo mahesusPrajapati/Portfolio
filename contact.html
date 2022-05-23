@@ -34,28 +34,35 @@
                 </li>
             </ul>
         </nav>
+        <div class="mobile-nav-icon">
+            <ion-icon name="grid-outline" class="open"></ion-icon>
+            <ion-icon name="close-outline" class="close"></ion-icon>
+        </div>
     </header>
     <section class="section section-contact">
         <div class="container">
             <h2 class="common-heading">Contact Us</h2>
         </div>
         <div class="section-contact-main contact-container">
-            <form action="#">
-                <div class="grid grid-two-column">
+            <form action=" https://formspree.io/f/mwkyyeye" method="POST">
+                <div class=" grid grid-two-column">
                     <div>
                         <label for="username"></label>
-                        <input type="text" name="username" id="username" placeholder="Username" />
+                        <input type="text" name="username" id="username" placeholder="Username" required
+                            autocomplete="off" />
                     </div>
                     <div>
                         <label for="e-mail"></label>
-                        <input type="text" name="e-mail" id="e-mail" placeholder="demo@mail.com" />
+                        <input type="email" name="e-mail" id="e-mail" placeholder="demo@mail.com" required
+                            autocomplete="off" />
                     </div>
                 </div>
                 <div>
-                    <input type="text" name="subject" placeholder="Subject" />
+                    <input type="text" name="subject" placeholder="Subject" required autocomplete="off" />
                 </div>
                 <div>
-                    <textarea name="textarea" id="" cols="30" rows="10" id="textarea"></textarea>
+                    <textarea name="textarea" id="" cols="30" rows="10" id="textarea" required autocomplete="off"
+                        minlength="5"></textarea>
                 </div>
                 <div>
                     <input type="submit" name="submit" id="submit" class="btn" value="send massage" />
